@@ -1,15 +1,45 @@
 <template>
-  <section class="l-container">
-    <p>Index page</p>
-  </section>
+  <div class="l-page">
+    <div class="l-container">
+      <h1 class="c-title c-title--center">Take a look at the weather conditions</h1>
+
+      <SearchForm placeholder="Enter location (London, UK e.g)"/>
+
+      <div class="c-blocks">
+        <div class="c-blocks__block">
+          <p>test</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import { mapState, mapActions } from 'vuex'
 import Component from 'vue-class-component'
+import { RootResponse, QueryParams } from '~/store/types/api'
+import WeatherBlock from '~/components/WeatherBlock.vue'
+import SearchForm from '~/components/SearchForm.vue'
 
 @Component({
-  middleware: 'authenticate'
+  middleware: 'authenticate',
+  components: {
+    WeatherBlock,
+    SearchForm
+  },
+  computed: {
+    ...mapState(['loading', 'data'])
+  },
+  methods: {
+    ...mapActions(['fetchWeatherData'])
+  }
 })
-export default class extends Vue {}
+export default class extends Vue {
+  loading: boolean
+
+  data: RootResponse
+
+  fetchWeatherData: (params: QueryParams) => void
+}
 </script>

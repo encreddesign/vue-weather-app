@@ -1,6 +1,6 @@
 import Vuex from 'vuex';
 import { RootState } from './types/state';
-import { renderWeatherData } from './mutations';
+import { renderWeatherData, populateUserKey } from './mutations';
 import { fetchWeatherData } from './actions';
 
 export const state = (): RootState => ({
@@ -10,7 +10,8 @@ export const state = (): RootState => ({
 })
 
 export const mutations = {
-  renderWeatherData
+  renderWeatherData,
+  populateUserKey
 }
 
 export const actions = {

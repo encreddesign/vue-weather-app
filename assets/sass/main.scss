@@ -1,5 +1,12 @@
 /* --- main --- */
 @import "base/variables";
+@import "base/root";
 
 /* --- layouts --- */
 @import "layouts/l-page";
+@import "layouts/l-container";
+
+/* --- components --- */
+@import "components/c-blocks";
+@import "components/c-title";
+@import "components/c-blocks";

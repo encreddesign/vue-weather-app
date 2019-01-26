@@ -76,6 +76,12 @@ module.exports = {
       config.node = {
         fs: 'empty'
       };
+    },
+    // enable autoprefixer
+    postcss: {
+      preset: {
+        autoprefixer: {}
+      }
     }
   }
 }

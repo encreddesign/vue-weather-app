@@ -1,0 +1,14 @@
+/* --- c-title --- */
+
+.c-title {
+  margin: 0.7rem 0;
+  font-weight: 300;
+
+  &--center {
+    text-align: center;
+  }
+
+  &--weight-medium {
+    font-weight: 400;
+  }
+}
