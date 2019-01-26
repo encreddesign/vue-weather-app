@@ -27,12 +27,14 @@ module.exports = {
   ** Global CSS
   */
   css: [
+    '~/assets/sass/main.scss'
   ],
 
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/dotenv'
   ],
 
   /*
@@ -49,7 +51,7 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
-    baseURL: 'https://samples.openweathermap.org/data/2.5/weather'
+    baseURL: 'https://api.openweathermap.org/data/2.5/weather'
   },
 
   /*
@@ -67,8 +69,13 @@ module.exports = {
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
           exclude: /(node_modules)/
-        })
+        });
       }
+
+      // tell webpack about nodejs modules
+      config.node = {
+        fs: 'empty'
+      };
     }
   }
 }
