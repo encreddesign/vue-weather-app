@@ -1,2 +1,21 @@
-/* --- vars --- */
+/* --- widths --- */
 $width-container: 1400px;
+
+$width-tablet: 860px;
+$width-mobile: 580px;
+
+$width-block: 60%;
+$width-block-mobile: 370px;
+$width-block-tablet: 90%;
+
+$width-block-image: 30%;
+$width-block-content: 70%;
+
+/* --- colors --- */
+$color-primary: rgba(31, 31, 31, 0.2);
+$color-white: #f0f0f0;
+$color-dark-white: #dddddd;
+$color-dark: rgb(51, 51, 51);
+
+/* --- font-sizes --- */
+$font-size-text: 1rem;

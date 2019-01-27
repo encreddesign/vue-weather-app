@@ -6,8 +6,14 @@ import { queryString } from './helpers/index';
  * @param {Function} commit
  * @param {QueryParams} params 
  */
-export async function fetchWeatherData({ commit }, params: QueryParams) {
+export async function fetchWeatherData({ commit, state }, params: QueryParams) {
   const apiUrl = `?${queryString(params)}`;
+
+  state.loading = true;
+
+  if (params.q) {
+    state.search = params.q;
+  }
 
   try {
     const response = await this.$axios.get(apiUrl, {
@@ -23,7 +29,7 @@ export async function fetchWeatherData({ commit }, params: QueryParams) {
   } catch (ex) {
     commit('renderWeatherData', <ApiData> {
       code: ex.response.status,
-      data: ex.response.data,
+      data: ex.response.message,
       error: true
     });
   }

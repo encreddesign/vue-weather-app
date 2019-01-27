@@ -6,4 +6,53 @@
   flex-direction: row;
   flex-flow: row;
   justify-content: center;
+  margin: 2rem 0;
+
+  &__block {
+    display: block;
+    width: 100%;
+    max-width: $width-block-mobile;
+    padding: 0.7rem;
+    border: 1px solid $color-primary;
+    border-radius: 5px;
+
+    &__image {
+      display: block;
+      width: 100%;
+      color: $color-dark;
+      text-align: center;
+
+      &--fill {
+        padding: 0.5rem;
+        background-color: $color-white;
+      }
+
+      svg {
+        width: 80%;
+        margin: 1rem 0;
+      }
+
+      @include mq($width-mobile, 'min') {
+        width: $width-block-image;
+      }
+    }
+
+    &__content {
+      display: block;
+      width: $width-block-content;
+      padding-left: 20px;
+    }
+
+    @include mq($width-mobile, 'min') {
+      display: flex;
+      flex-direction: row;
+      flex-flow: row;
+      width: $width-block;
+      max-width: none;
+    }
+
+    @include mq($width-tablet) {
+      width: $width-block-tablet;
+    }
+  }
 }

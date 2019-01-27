@@ -5,11 +5,17 @@
 
       <SearchForm placeholder="Enter location (London, UK e.g)"/>
 
-      <div class="c-blocks">
-        <div class="c-blocks__block">
-          <p>test</p>
+      <template v-if="loading">
+        <div class="c-blocks">
+          <WeatherBlock :placeholder="true" />
         </div>
-      </div>
+      </template>
+      <template v-else>
+        <div v-if="data" class="c-blocks">
+          <WeatherBlock :data="data"/>
+        </div>
+        <h3 v-else-if="search" class="c-title c-title--error c-title--center">No weather results returned for "{{ search }}"</h3>
+      </template>
     </div>
   </div>
 </template>
@@ -29,7 +35,12 @@ import SearchForm from '~/components/SearchForm.vue'
     SearchForm
   },
   computed: {
-    ...mapState(['loading', 'data'])
+    ...mapState([
+      'loading',
+      'data',
+      'error',
+      'search'
+    ])
   },
   methods: {
     ...mapActions(['fetchWeatherData'])
@@ -39,6 +50,10 @@ export default class extends Vue {
   loading: boolean
 
   data: RootResponse
+
+  error: boolean
+
+  search: string | null
 
   fetchWeatherData: (params: QueryParams) => void
 }

@@ -1,6 +1,8 @@
 /* --- main --- */
 @import "base/variables";
 @import "base/root";
+@import "base/animations";
+@import "base/mixins";
 
 /* --- layouts --- */
 @import "layouts/l-page";
@@ -9,4 +11,6 @@
 /* --- components --- */
 @import "components/c-blocks";
 @import "components/c-title";
-@import "components/c-blocks";
+@import "components/c-form";
+@import "components/c-placeholder";
+@import "components/c-button";

@@ -1,0 +1,7 @@
+/* --- mixins --- */
+
+@mixin mq($width, $constraint: 'max') {
+  @media only screen and (#{$constraint}-width: $width) {
+    @content;
+  }
+}

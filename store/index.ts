@@ -6,7 +6,9 @@ import { fetchWeatherData } from './actions';
 export const state = (): RootState => ({
   apiKey: null,
   loading: false,
-  data: null
+  data: null,
+  error: false,
+  search: null
 })
 
 export const mutations = {

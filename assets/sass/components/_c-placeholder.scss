@@ -1,0 +1,28 @@
+/* --- c-placeholder --- */
+
+.c-placeholder {
+  position: relative;
+  display: block;
+  width: 100%;
+  background: $color-white;
+  border-radius: 5px;
+  animation: placeholder .7s linear alternate infinite;
+
+  &--image {
+    height: 200px;
+  }
+
+  &--text {
+    height: 20px;
+    width: 100%;
+    max-width: 80%;
+    margin-bottom: 10px;
+  }
+
+  &--title {
+    height: 20px;
+    width: 100%;
+    max-width: 40%;
+    margin-bottom: 25px;
+  }
+}
