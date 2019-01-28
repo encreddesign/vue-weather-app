@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  vue:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    container_name: vue-app
+    restart: on-failure
+    ports:
+      - "3000:3000"
+    command: npm run start
+  nginx:
+    image: nginx:alpine
+    container_name: vue-nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./docker/nginx:/etc/nginx/conf.d
+    depends_on:
+      - vue
