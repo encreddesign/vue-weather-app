@@ -13,4 +13,9 @@
   &:hover {
     background-color: lighten($color-dark, 10%);
   }
+
+  &[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 }
